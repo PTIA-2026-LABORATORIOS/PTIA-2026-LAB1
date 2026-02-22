@@ -142,4 +142,175 @@ import pandas as pd
 from abc import ABC, abstractmethod
 ```
 
+### Funciones base: métrica y criterio
 
+![img_6.png](img_6.png)
+
+### Métrica
+
+``` python
+class Metric(ABC):
+  """ Abstracta: define entradas, salidas y el comportamiento inicial de los métodos clave para cualquier metrica
+  Representa una metrica de desempeño P para evaluar una tarea T
+  """
+  @classmethod
+  def use(cls,name: str):
+    """ obtiene metrica (OBJ) a partir del nombre
+    Args:
+      name  : nombre esperado de la metrica
+    Returns:
+       objeto metrica
+    """
+    pass
+
+  def value(self, Y: pd.DataFrame, Yp: pd.DataFrame)->float:
+    """ computa el desempeño P
+    Args:
+      Y   s de salidas esperadas (etiquetadas)
+      Yp  : valores de salidas obtenidas
+    Return:
+      valor del desempeño
+    """
+    pass
+```
+
+``` python
+# Documentar los métodos implementados
+class Accuracy(Metric):
+  """ Metrica de exactitud (acertados / totales). Implementa Metric
+  """
+  def __new__(cls):
+    pass
+
+  def value(self, Y: pd.DataFrame, Yp: pd.DataFrame)->float:
+    pass
+```
+
+``` python
+# Documentar los métodos implementados
+class Precision(Metric):
+  """ Metrica de precision). Implementa Metric
+  """
+  def __new__(cls):
+    pass
+
+  def value(self, Y: pd.DataFrame, Yp: pd.DataFrame)->float:
+    pass
+```
+
+``` python
+# Documentar los métodos implementados
+class Recall(Metric):
+  """ Metrica de exhaustividad. Implementa Metric
+  """
+  def __new__(cls):
+    pass
+
+  def value(self, Y: pd.DataFrame, Yp: pd.DataFrame)->float:
+    pass
+```
+
+``` python
+# Documentar los métodos implementados
+class F1Score(Metric):
+  """ Metrica de media armónica entre Precisión y Exhaustividad. Implementa Metric
+  """
+  def __new__(cls):
+    pass
+
+  def value(self, Y: pd.DataFrame, Yp: pd.DataFrame)->float:
+    pass
+```
+
+``` python
+# Adicione los casos de prueba de los métodos implementados
+```
+
+### Criterio
+
+``` python
+class Criterium(ABC):
+  """ Abstracta: Define el criterio para seleccionar y dar prioridad a los atributos
+  Representa la impureza
+  """
+  @classmethod
+  def use(cls, name: str):
+    """ obtiene criterio de selección (OBJ) a partir del nombre
+    Args:
+      name  : nombre esperado del criterio
+    Returns:
+      objeto criterio de selección
+    """
+    pass
+
+  def impurity(self, V: pd.DataFrame) -> float:
+    """ computa la impureza en un nodo/vértice
+    Args:
+      V    : ejemplares para una característica
+    Returns:
+       valor de la impureza del nodo
+    """
+    pass
+
+  def gain(self, a: str, X: pd.DataFrame, Y: [pd.DataFrame]) -> float:
+    """ computa la ganancia de información de un nodo con 1 o más hijos
+    Args:
+      a  : atributo/característica a evaluar
+      X : ejemplares / valores de entrada
+      Y : valores de salida esperados
+    Returns:
+      valor de la ganancia de información
+    """
+    pass
+
+  def treeImpurity(self, nodes: [pd.DataFrame]) -> float:
+    """ computa la impureza de todo un arbol
+    Args:
+      nodes    : datos de cada uno de los nodos del arbol
+    Returns:
+      valor de la impureza del arbol
+    """
+    pass
+```
+
+``` python
+# Documentar los métodos implementados
+class Entropy(Criterium):
+  """ Criterio de selección - impureza por entropia
+  """
+  def __new__(cls):
+    pass
+
+  def impurity(self, V: pd.DataFrame) -> float:
+    pass
+
+  def gain(self, a: str, X: pd.DataFrame, Y: pd.DataFrame) -> float:
+    pass
+
+  def treeImpurity(self, nodes: pd.DataFrame) -> float:
+    pass
+```
+
+``` python
+# Adicione los casos de prueba de los métodos implementados
+```
+
+### Árbol de decisión
+
+Para la implementación sigan las decisiones de diseño presentadas en el
+diagrama de clases. Pueden incluir los métodos y clases adicionales que
+requieran.
+
+#### Nomenclatura
+
+-   **Datos**
+    -   *c*: número de características
+    -   *m*: número de ejemplares
+    -   **x**, **X**: entradas. Un ejemplo (1xc) o todos los ejemplos
+        (mxc)
+    -   **y**, **Y**: salidas reales. Un ejemplo (1xc) o todos los
+        ejemplos(mxc)
+    -   **yp**, **Yp**: salidas estimadas. Un ejemplo (1xc) o todos los
+        ejemplos(cxm)
+    
+![img_7.png](img_7.png)
