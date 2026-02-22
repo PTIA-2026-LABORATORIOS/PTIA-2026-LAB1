@@ -314,3 +314,81 @@ requieran.
         ejemplos(cxm)
     
 ![img_7.png](img_7.png)
+
+``` python
+class DecisionTree:
+  """ Representa un árbol de decisión
+  """
+  def __init__(self, max_depth: int, min_categories: int):
+    """ inicializar la clase de árbol de decisión.
+    Args:
+      max_depth   : Profundidad máxima del árbol de decisión
+      min_categories   : Número mínimo de categorias para dividir un nodo
+    """
+    pass
+
+  def metric(self, Y: pd.DataFrame, Yp: pd.DataFrame) -> float:
+    """ computa la metrica del modelo a partir de los ejemplares comparando las salidas
+    Args:
+      Y  : valores de salidas esperadas (etiquetadas)
+      Yp  : valores de salidas obtenidas
+    Return:
+       desempeño del modelo para ejemplares
+    """
+    pass
+
+  def predict(self, X: pd.DataFrame) -> pd.DataFrame:
+    """ computa una serie de entradas a traves del arbol generando una predicción
+    Args:
+      X    : valores de características (entradas)
+    Return:
+     valores de salidas obtenidas
+    """
+    pass
+
+  def train(self, X: pd.DataFrame, Y: pd.DataFrame, print_impurity: bool, do_graphic: bool):
+    """ construye y entrena el árbol de decisión a partir de unos ejemplares.
+    Args:
+      X  : valores de características - conjunto de entrenamiento
+      Y  : valores de salidas esperadas - conjunto de entrenamiento
+      print_impurity : mostrar la impureza del arbol por iteración
+      do_graphic: graficar las impurezas por iteración
+    """
+    pass
+
+  def depth()->int:
+    """ consulta la profundidad del árbol
+    Return:
+      profundidad del árbol
+    """
+    pass
+
+  def rules() -> [str]:
+    """ consultar las reglas del árbol
+    Return:
+      reglas del árbol de decisión
+    """
+    pass
+
+  def to_string() -> str:
+    """ consultar la estructura del arbol
+    Return:
+      estructura del árbol
+    """
+    pass
+```
+``` python
+# Como primer caso de prueba entrene un árbol para calcular el operador lógico and. Explique los resultados.
+```
+
+``` python
+# Como segundo caso de prueba entrene un árbol para calcular el operador lógico or. Explique los resultados.
+```
+
+``` python
+# Como tercer caso de prueba entrene un árbol para calcular el operador lógico xor. Explique los resultados.
+```
+
+``` python
+# Como último caso de prueba entrene un árbol para el dataset propuesto por su profesor. Use 80% para entrenamiento y 20% para pruebas. Explique los resultado.
+```
