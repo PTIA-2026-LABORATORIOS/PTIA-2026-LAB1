@@ -65,12 +65,12 @@ Los principales métodos de evaluación de impureza son: **entropía** e **indic
 ---
 **Entropia:**
 
-![img.png](img.png)
+![img.png](Img/img.png)
 
 ---
 **Gini**
 
-![img_1.png](img_1.png)
+![img_1.png](Img/img_1.png)
 
 Donde *Pi* es la probabilidad de que un ejemplo sea de la clase *i*.
 
@@ -95,7 +95,7 @@ Los otros dos conceptos de fundamentan los árboles de decisión son la **gananc
 
 Es una medida utilizada en los árboles de decisión para cuantificar cuánto disminuye la impureza del conjunto de datos cuando se realiza una división basada en una característica específica. Su objetivo es determinar cuál atributo resulta más adecuado para separar los datos en un nodo del árbol. Cuanto mayor sea la ganancia obtenida, más efectiva es la característica para diferenciar las clases y mayor será la pureza de los subconjuntos generados.
 
-![img_2.png](img_2.png)
+![img_2.png](Img/img_2.png)
 
 
 I es la función que mide la impureza
@@ -119,17 +119,17 @@ Formulas de impureza:
 
 Entropy:
 
-![img_3.png](img_3.png)
+![img_3.png](Img/img_3.png)
 
 
 Gini:
 
-![img_4.png](img_4.png)
+![img_4.png](Img/img_4.png)
 
 
 Error de clasificación: Se encarga de medir la proporción de ejemplos que no pertenecen a la clase más común.
 
-![img_5.png](img_5.png)
+![img_5.png](Img/img_5.png)
 
 --- 
 
@@ -144,7 +144,7 @@ from abc import ABC, abstractmethod
 
 ### Funciones base: métrica y criterio
 
-![img_6.png](img_6.png)
+![img_6.png](Img/img_6.png)
 
 ### Métrica
 
@@ -313,7 +313,7 @@ requieran.
     -   **yp**, **Yp**: salidas estimadas. Un ejemplo (1xc) o todos los
         ejemplos(cxm)
     
-![img_7.png](img_7.png)
+![img_7.png](Img/img_7.png)
 
 ``` python
 class DecisionTree:
