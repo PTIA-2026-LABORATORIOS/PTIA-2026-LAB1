@@ -1,1 +1,0 @@
-veleria es fea
