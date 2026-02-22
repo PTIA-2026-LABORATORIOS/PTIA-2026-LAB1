@@ -393,6 +393,9 @@ class DecisionTree:
 # Como último caso de prueba entrene un árbol para el dataset propuesto por su profesor. Use 80% para entrenamiento y 20% para pruebas. Explique los resultado.
 ```
 
+<img width="1246" height="413" alt="image" src="https://github.com/user-attachments/assets/2dd0f4e9-1c1c-4bee-9ff6-4d91955fd0d4" />
+
+
 # PARTE II. USO DE FRAMEWORK PARA ÁRBOLES DE DECISIÓN
 
 En esta sección se utilizará una librería que permite entrenar de forma sencilla y flexible distintos modelos basados en árboles de decisión. La librería elegida es **scikit-learn**.
