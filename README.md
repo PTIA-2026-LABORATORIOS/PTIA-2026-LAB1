@@ -98,4 +98,48 @@ Es una medida utilizada en los árboles de decisión para cuantificar cuánto di
 ![img_2.png](img_2.png)
 
 
+I es la función que mide la impureza
+
+Dp es el dataset "padre" que se está dividiendo
+
+Np es el número de elementos del dataset padre
+
+Dj es el dataset j-ésimo en el que se ha dividido Dp
+
+Nj es el número de elementos del dataset Dj
+
+------------------------------------------------------------------------
+
+**Impureza:**
+
+Las impurezas en árboles de decisiones se encargan de medir que tan homogéneas o heterogéneas son las clases en un conjunto
+datos en un nodo del árbol. Ell nodo es puro si tiene ejemplos de solo una clase, es más impuro si hay mezclas entre las clases.
+
+Formulas de impureza:
+
+Entropy:
+
+![img_3.png](img_3.png)
+
+
+Gini:
+
+![img_4.png](img_4.png)
+
+
+Error de clasificación: Se encarga de medir la proporción de ejemplos que no pertenecen a la clase más común.
+
+![img_5.png](img_5.png)
+
+--- 
+
+## Paso 3. Implementación del código base para un árbol de decisión
+
+### Librería necesaria
+
+``` python
+import pandas as pd
+from abc import ABC, abstractmethod
+```
+
 
